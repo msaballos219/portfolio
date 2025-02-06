@@ -10,7 +10,6 @@ type Props = CollectionEntry<"blog">["data"];
 
 const {
   title = "",
-  description,
   pubDate,
   updatedDate,
   heroImage = "/fran.jpg",
@@ -40,7 +39,7 @@ const getRandomClass = () => {
 
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead title={title} />
   </head>
   <body>
     <Header />
@@ -83,7 +82,7 @@ const getRandomClass = () => {
                 {
                   posts.map((post) => {
                     return (
-                      <li class=`text-left rounded-lg border-1 border-black shadow-card group hover:shadow-hover transition  px-2 py-2 ${getRandomClass()}` >
+                      <li class={`text-left rounded-lg border-1 border-black shadow-card group hover:shadow-hover transition  px-2 py-2 ${getRandomClass()}`} >
                         <a
                           href={`/blog/${post.id}/`}
                         >
